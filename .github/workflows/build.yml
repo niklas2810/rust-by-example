@@ -14,5 +14,9 @@ jobs:
     steps:
       - name: ⏬ Checkout code
         uses: actions/checkout@v2
-      - name: 📦 Build project
+      - name: 📦 Build project (debug)
         run: cargo build --workspace
+      - name: 📦 Build project (release)
+        run: cargo build --workspace --release
+      - name: 🧪 Run tests
+        run: cargo test --workspace
